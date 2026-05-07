@@ -10,7 +10,7 @@
     <meta name="description" content="Herozi is Bootstrap 5 admin dashboard template. With Dark Mode, multi-demo options, RTL support, and lifetime updates, it's perfect for web developers.">
     <meta name="keywords" content="Herozi bootstrap dashboard, bootstrap, bootstrap 5, html dashboard, web dashboard, admin themes, web design, figma, web development, fullcalendar, datatables, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dark mode, bootstrap button, frontend dashboard, responsive bootstrap theme">
     <meta content="SRBThemes" name="author">
-    <link rel="shortcut icon" href="{{asset('assets')}}/images/Favicon.png">
+    <link rel="shortcut icon" href=" {{ asset('uploads/admin_logos/' . ($admin_logo ? $admin_logo->header_logo : 'default-header-logo.png')) }}">
 
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="article">
@@ -55,8 +55,8 @@
             <!-- HORIZONTAL BRAND LOGO -->
             <div class="app-sidebar-logo app-horizontal-logo justify-content-center align-items-center">
               <a href="index.html">
-                <img height="35" class="app-sidebar-logo-default" alt="Logo" loading="lazy" src="{{asset('assets')}}/images/light-logo.png">
-                <img height="40" class="app-sidebar-logo-minimize" alt="Logo" loading="lazy" src="{{asset('assets')}}/images/Favicon.png">
+                <img height="35" class="app-sidebar-logo-default" alt="Logo" loading="lazy"  src="{{ asset('uploads/admin_logos/' . ($admin_logo ? $admin_logo->header_logo : 'default-header-logo.png')) }}"">
+                <img height="40" class="app-sidebar-logo-minimize" alt="Logo" loading="lazy"  src="{{ asset('uploads/admin_logos/' . ($admin_logo ? $admin_logo->header_logo : 'default-header-logo.png')) }}">
               </a>
             </div>
 
@@ -664,8 +664,8 @@
                 @elseif (Auth::user()->role == 'moderator')
                   <a href="{{ route('moderator.dashboard') }}">
                 @endif
-                <img height="35" class="app-sidebar-logo-default" alt="Logo" src="{{asset('assets')}}/images/light-logo.png">
-                <img height="40" class="app-sidebar-logo-minimize" alt="Logo" src="{{asset('assets')}}/images/Favicon.png">
+                <img height="35" class="app-sidebar-logo-default" alt="Logo"  src="{{ asset('uploads/admin_logos/' . ($admin_logo ? $admin_logo->header_logo : 'default-header-logo.png')) }}">
+                <img height="40" class="app-sidebar-logo-minimize" alt="Logo"  src="{{ asset('uploads/admin_logos/' . ($admin_logo ? $admin_logo->header_logo : 'default-header-logo.png')) }}">
             </a>
         </div>
         <!-- END BRAND LOGO -->
@@ -1362,12 +1362,15 @@
                         <i class="ri-arrow-down-s-line side-menu__angle"></i>
                     </a>
                     <ul class="slide-menu" role="menu">
-                        <li class="slide">
-                            <a href="{{ route('frontend.logo.index') }}" class="side-menu__item" role="menuitem" > Frontend Logo</a>
-                        </li>
-                        <li class="slide">
-                            <a href="icons-bootstrap-icons.html" class="side-menu__item" role="menuitem" data-lang="hr-bootstrap-icons">Bootstrap Icons</a>
-                        </li>
+                       <!-- পরিবর্তন করার আগের কোড -->
+<li class="slide">
+    <a href="{{ route('admin.logo.index') }}" class="side-menu__item" role="menuitem" data-lang="hr-bootstrap-icons">Bootstrap Icons</a>
+</li>
+
+<!-- পরিবর্তন করার পরের সঠিক কোড -->
+<li class="slide">
+    <a href="{{ route('admin.logo.index') }}" class="side-menu__item" role="menuitem">Admin Logo</a>
+</li>
                     </ul>
                 </li>
                 @endif
@@ -1427,8 +1430,8 @@
             <!-- START BRAND LOGO -->
             <div class="app-sidebar-logo">
                 <a href="index.html">
-                    <img height="35" class="app-sidebar-logo-default h-25px" alt="Logo" src="{{asset('assets')}}/images/light-logo.png">
-                    <img height="40" class="app-sidebar-logo-minimize" alt="Logo" src="{{asset('assets')}}/images/Favicon.png">
+                    <img height="35" class="app-sidebar-logo-default h-25px" alt="Logo" src="{{ asset('uploads/admin_logos/' . ($admin_logo ? $admin_logo->header_logo : 'default-header-logo.png')) }}">
+                    <img height="40" class="app-sidebar-logo-minimize" alt="Logo" src="{{ asset('uploads/admin_logos/' . ($admin_logo ? $admin_logo->header_logo : 'default-header-logo.png')) }}">
                 </a>
             </div>
             <button type="button" class="btn-close bg-transparent" data-bs-dismiss="offcanvas" aria-label="Close">

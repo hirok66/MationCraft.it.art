@@ -43,13 +43,13 @@
                                     <h5>Our Social Link :</h5>
                                     <ul class="project-social">
                                         <li>
-                                            <a href="#">
+                                            <a href="https://www.facebook.com/share/1HpyGiDky3/">
                                                 <i class="fa fa-facebook"></i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">
-                                                <i class="fa fa-twitter"></i>
+                                            <a href="https://youtube.com/@motioncraft-mc?si=cSjSeO8lgDS5pEXO">
+                                                <i class="fa fa-youtube"></i>
                                             </a>
                                         </li>
                                         <li>
@@ -58,12 +58,12 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">
-                                                <i class="fa fa-pinterest"></i>
+                                            <a href="https://www.linkedin.com/in/rasel-hossain-855aa0407?utm_source=share_via&utm_content=profile&utm_medium=member_android">
+                                                <i class="fa fa-linkedin"></i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">
+                                            <a href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=auimz39">
                                                 <i class="fa fa-instagram"></i>
                                             </a>
                                         </li>

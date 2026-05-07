@@ -60,7 +60,9 @@
                         <div class="row">
                             <div class="col-xl-5 col-lg-5 col-md-3">
                                 <div class="header-logo">
-                                    <a href="{{ route('welcome') }}"><img src="img/logo/logo3.png" alt=""></a>
+                                    <a href="{{ route('welcome') }}">
+                                        <img src="{{ asset('uploads/admin_logos/' . ($admin_logo ? $admin_logo->header_logo : 'default-header-logo.png')) }}" alt="">
+                                    </a>
                                 </div>
                             </div>
                             <div class="col-xl-7 col-lg-7 col-md-9">
@@ -115,7 +117,7 @@
                         <div class="footer-content logo-footer wow fadeInUp" data-wow-delay="0.3s">
                             <div class="footer-head">
                                 <div class="footer-logo">
-                                    <a href="{{ route('welcome') }}"><img src="img/logo/logo2.png" alt=""></a>
+                                    <a href="{{ route('welcome') }}"><img  src="{{ asset('uploads/admin_logos/' . ($admin_logo ? $admin_logo->footer_logo : 'default-header-logo.png')) }}" alt=""></a>
                                 </div>
                                 <p>When replacing a multi lined selection of text dummy text maintains the amount of lines. When replacing a selection.</p>
                                 <div class="footer-icons">

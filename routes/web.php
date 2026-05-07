@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminDashboardContrller;
+use App\Http\Controllers\Admin\AdminLogoController;
 use App\Http\Controllers\Admin\EditeorDashboardContrller;
 use App\Http\Controllers\Admin\ModeratorDashboardController;
 use App\Http\Controllers\Admin\UseerDashboardContrller;
@@ -10,9 +11,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\EditeorMidleware;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+Route::get('/', function () { return view('welcome');})->name('welcome');
 
 
 
@@ -39,14 +38,14 @@ Route::middleware('auth','verified','admin')->group(function () {
 
 
 });
+Route::middleware(['auth','verified','admin'])->group(function () {
 
-// frontend logo routes
-Route::middleware('auth','verified','admin')->group(function () {
+    // frontend logo
     Route::get('/admin/frontend/logo', [AdminDashboardContrller::class, 'frontendLogoIndex'])->name('frontend.logo.index');
-    Route::post('/admin/logo/store', [AdminDashboardContrller::class, 'store'])->name('frontend.logo.store');
-
-
-
+    Route::post('/admin/frontend/logo/store', [AdminDashboardContrller::class, 'store'])->name('frontend.logo.store');
+    // admin logo
+    Route::get('/admin/admin/logo', [AdminLogoController::class, 'adminLogoIndex'])->name('admin.logo.index');
+    Route::post('/admin/admin/logo/store', [AdminLogoController::class, 'adminLogoStore'])->name('admin.logo.store');
 });
 
 

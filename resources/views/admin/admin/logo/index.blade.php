@@ -1,23 +1,23 @@
 @extends('layouts.app')
 @section('content')
 
-    {{-- <div class="row g-6">
+    <div class="row g-6">
         <div class="col-12 col-lg-6">
             <div class="card h-100 mb-0">
                 <div class="card-header">
-                    <h5 class="card-title mb-0">Frontend Logo</h5>
+                    <h5 class="card-title mb-0">Admin Logo</h5>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('frontend.logo.store') }}" method="POST" enctype="multipart/form-data">
-                        @csrf
+                  <form action="{{ route('admin.logo.store') }}" method="POST" enctype="multipart/form-data">
 
+                    @csrf
 
                         <div class="row">
                             <!-- Header Logo -->
                             <div class="col-md-6 mt-5">
                                 <label class="form-label">Header Logo Preview:</label>
                                 <div class="mb-2">
-                                    <img id="header-preview" src="{{ $logo?->header_logo ? asset('uploads/frontend_logos/'.$logo->header_logo) : asset('placeholder.png') }}" alt="header preview"
+                                    <img id="header-preview" src="{{ $logo?->header_logo ? asset('uploads/admin_logos/'.$logo->header_logo) : asset('placeholder.png') }}" alt="header preview"
                                         class="img-thumbnail" style="max-height: 150px;">
                                 </div>
                                 <input type="file" class="form-control" name="headerlogo" accept="image/*"
@@ -32,7 +32,7 @@
                             <div class="col-md-6 mt-5">
                                 <label class="form-label">Footer Logo Preview:</label>
                                 <div class="mb-2">
-                                    <img id="footer-preview" src="{{ $logo?->footer_logo ? asset('uploads/frontend_logos/'.$logo->footer_logo) : asset('placeholder.png') }}" alt="footer preview"
+                                    <img id="footer-preview" src="{{ $logo?->footer_logo ? asset('uploads/admin_logos/'.$logo->footer_logo) : asset('placeholder.png') }}" alt="footer preview"
                                         class="img-thumbnail" style="max-height: 150px;">
                                 </div>
                                 <input type="file" class="form-control" name="footerlogo" accept="image/*"
@@ -57,7 +57,7 @@
         </div>
 
 
-    </div> --}}
+    </div>
 @endsection
 @section('footer')
 <script>
