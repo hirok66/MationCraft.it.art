@@ -32,20 +32,38 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
+            'role' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+            'phone' => ['required', 'string', 'max:11', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'role' => $request->role,
+            'phone' => $request->phone,
             'password' => Hash::make($request->password),
         ]);
 
         event(new Registered($user));
 
         Auth::login($user);
+if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail()) {
+    return redirect()->route('verification.notice');
+}
 
-        return redirect(route('dashboard', absolute: false));
-    }
+if ($user->role == 'admin' || $user->role == 'superadmin') {
+    return redirect()->intended(route('admin.dashboard', absolute: false));
+}
+else if ($user->role == 'editor') {
+    return redirect()->intended(route('editor.dashboard', absolute: false));
+}
+else if ($user->role == 'moderator') {
+    return redirect()->intended(route('moderator.dashboard', absolute: false));
+}
+
+return redirect()->intended(route('user.dashboard', absolute: false));
+
+}
 }
